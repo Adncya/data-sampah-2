@@ -1,3 +1,17 @@
+// Blokir klik kanan
+document.addEventListener("contextmenu", (event) => event.preventDefault());
+
+// Blokir tombol shortcut
+document.addEventListener("keydown", function (e) {
+  if (
+    e.key === "F12" ||
+    (e.ctrlKey && e.shiftKey && e.key === "I") ||
+    (e.ctrlKey && e.shiftKey && e.key === "J") ||
+    (e.ctrlKey && e.key === "U")
+  ) {
+    e.preventDefault();
+  }
+});
 function cekSampahKelas(event) {
   console.log("submit di pencet");
   event.preventDefault();
