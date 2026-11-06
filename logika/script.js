@@ -12,6 +12,9 @@ document.addEventListener("keydown", function (e) {
     e.preventDefault();
   }
 });
+
+console.log("wel");
+
 function cekSampahKelas(event) {
   console.log("submit di pencet");
   event.preventDefault();
