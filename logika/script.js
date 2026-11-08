@@ -13,64 +13,118 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-console.log("wel");
 
 function cekSampahKelas(event) {
-  console.log("submit di pencet");
+  // Mengilangkan funsi bawaan event yang akan mereload halaman ketika form si submit
   event.preventDefault();
-  let name = document.getElementById("nama").value;
-  let inputKelas1 = document.getElementById("inputKelas").value;
-  let inputKelas2 = document.getElementById("jurusan").value;
-  let inputKelas3 = inputKelas2 + " " + inputKelas1;
-  let namaKelas = inputKelas3;
-  if (namaKelas === "PMN 1") {
-    alert("Total sampah untuk kelas PMN 1 adalah: 54.70 kg");
-  } else if (
-    namaKelas === "TJKT 1" ||
-    namaKelas === "TJKT 2" ||
-    namaKelas === "TJKT 3"
-  ) {
+
+  let nama = document.getElementById("nama").value.trim();
+  // tolowercase() berfungsi untuk mengubah value menjadi lowercase
+  let jurusan = document.getElementById("jurusan").value.toLowerCase().trim();
+  let kelas = document.getElementById("inputKelas").value.trim();
+  let target = jurusan + " " + kelas;
+  // value berfungsi untuk megambil apapun yang ada di kotak inpur, dan .trim bertugas untuk menghapus spasi di dalam value
+  if (target === "dkv 1" || target === "dkv 3") {
     alert(
-      "Total rata-rata sampah untuk kelas " + namaKelas + " adalah: 38.13 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 90 kg",
     );
-  } else if (namaKelas === "KLN 1" || namaKelas === "HTL 1") {
+  } else if (target === "pplg 1" || target === "pplg 3") {
     alert(
-      "Total rata-rata sampah untuk kelas " + namaKelas + " adalah: 36.10 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 86,5 kg",
     );
-  } else if (namaKelas === "MPLB") {
-    alert("Total sampah untuk kelas MPLB adalah: 31.20 kg");
-  } else if (
-    namaKelas === "HTL 2" ||
-    namaKelas === "KLN 2" ||
-    namaKelas === "TJKT 4"
-  ) {
+  } else if (target === "tjkt 1" || target === "tjkt 3") {
     alert(
-      "Total rata-rata sampah untuk kelas " + namaKelas + " adalah: 30.35 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 114,4 kg",
     );
-  } else if (namaKelas === "DKV 1" || namaKelas === "DKV 3") {
+  } else if (target === "kln 1" || target === "htl 1") {
     alert(
-      "Total rata-rata sampah untuk kelas " + namaKelas + " adalah: 30.00 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 72,2 kg",
     );
-  } else if (namaKelas === "PPLG 1" || namaKelas === "PPLG 3") {
+  } else if (jurusan === "mplb") {
+    alert("Halo " + nama + ", berat sampah untuk MPLB adalah: 31,2 kg");
+  } else if (target === "dkv 2" || target === "pmn 2") {
     alert(
-      "Total rata-rata sampah untuk kelas " + namaKelas + " adalah: 28.83 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 10,7 kg",
     );
-  } else if (namaKelas === "DKV 2") {
+  } else if (target === "pplg 2" || target === "pplg 4") {
     alert(
-      "Total rata-rata sampah untuk kelas DKV 2 berkisar antara: 28.20 kg - 30.00 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 92 kg",
     );
-  } else if (namaKelas === "PMN 2") {
-    alert("Total rata-rata sampah untuk kelas PMN 2 adalah: 28.20 kg");
-  } else if (namaKelas === "PPLG 2") {
+  } else if (target === "tjkt 2" || target === "tjkt 4") {
     alert(
-      "Total rata-rata sampah untuk kelas PPLG 2 berkisar antara: 23.15 kg - 28.83 kg",
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 60,7 kg",
     );
-  } else if (namaKelas === "PPLG 4") {
-    alert("Total rata-rata sampah untuk kelas PPLG 4 adalah: 23.15 kg");
+  } else if (target === "htl 2" || target === "kln 2") {
+    alert(
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 60,7 kg",
+    );
+  } else if (target === "pmn 1") {
+    alert(
+      "Halo " +
+        nama +
+        ", berat sampah untuk " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " adalah: 54,7 kg",
+    );
   } else {
     alert(
-      "Maaf, kelas tidak ditemukan. Pastikan format penulisan benar (Contoh: DKV 1).",
+      "Maaf " +
+        nama +
+        ", data kelas " +
+        jurusan.toUpperCase() +
+        " " +
+        kelas +
+        " tidak ditemukan!",
     );
   }
-  alert("Terima kasih sudah mampir " + name);
 }
